@@ -1,0 +1,72 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:laba_7"
+        xmlns:ZooDataSetTableAdapters="clr-namespace:laba_7.ZooDataSetTableAdapters" x:Class="laba_7.MainWindow"
+        mc:Ignorable="d"
+        Title="База данных зоопарка" WindowState="Maximized"
+    Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Menu x:Name="menu" VerticalAlignment="Top" Height="25">
+            <MenuItem Header="_Фаил" x:Name="File">
+                <MenuItem.Icon>
+                    <Image Source= "C:\Users\Dima\source\repos\laba_3\laba_3\imageres_5.ico"  />
+                </MenuItem.Icon>
+                <MenuItem Name="delete" Header="_delete" Click="delete_Click"/>
+                <MenuItem Name="btnCreateDatabase" Header="_Create Database" Click="btnCreateDatabase_Click"/>
+            </MenuItem>
+            <MenuItem Header="_О программе" x:Name="About" Click="About_Click">
+                <MenuItem.Icon>
+                    <Image Source= "C:\Users\Dima\Pictures\Oxygen-Icons.org-Oxygen-Actions-help-about.ico"  />
+                </MenuItem.Icon>
+            </MenuItem>
+
+        </Menu>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="694" Margin="0,25,0,0" Stroke="Black" VerticalAlignment="Top" Width="199"/>
+        <TextBox Name="text1"  ToolTip="Введите название" HorizontalAlignment="Left" Height="26" Margin="10,86,0,0" TextWrapping="Wrap" Text="Название" VerticalAlignment="Top" Width="175" TextChanged="TextBox_TextChanged"/>
+        <TextBox Name="text2"  ToolTip="Введите тип" HorizontalAlignment="Left" Height="26" Margin="10,123,0,0" TextWrapping="Wrap" Text="Тип" VerticalAlignment="Top" Width="175" TextChanged="text2_TextChanged"/>
+        <TextBox Name="text3" ToolTip="Введите описание"  HorizontalAlignment="Left" Height="26" Margin="10,167,0,0" TextWrapping="Wrap" Text="Описание" VerticalAlignment="Top" Width="175" TextChanged="text3_TextChanged"/>
+        <TextBox Name="text4" ToolTip="Введите отряд" HorizontalAlignment="Left" Height="26" Margin="10,207,0,0" TextWrapping="Wrap" Text="Oтряд" VerticalAlignment="Top" Width="175" TextChanged="text4_TextChanged"/>
+        <ComboBox Name="age" ToolTip="Выберите возраст" HorizontalAlignment="Left" Margin="10,238,0,0" VerticalAlignment="Top" Width="175" SelectionChanged="age_SelectionChanged">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+            <ComboBoxItem Content="4"/>
+            <ComboBoxItem Content="5"/>
+            <ComboBoxItem Content="6"/>
+            <ComboBoxItem Content="7"/>
+            <ComboBoxItem Content="8"/>
+            <ComboBoxItem Content="9"/>
+            <ComboBoxItem Content="10"/>
+
+        </ComboBox>
+        <CheckBox  Name="Red" Content="Занесен в красную книгу?" HorizontalAlignment="Left"
+                   Margin="10,316,0,0" VerticalAlignment="Top" Width="175" Checked="CheckBox_Checked"
+                       Unchecked="CheckBox_Unchecked" />
+        <ComboBox Name="areal" HorizontalAlignment="Left" Margin="10,350,0,0" VerticalAlignment="Top" Width="175" SelectionChanged="areal_SelectionChanged">
+            <ComboBoxItem Content="Леса"/>
+            <ComboBoxItem Content="Поля"/>
+            <ComboBoxItem Content="Пустыни"/>
+            <ComboBoxItem Content="Озера"/>
+            <ComboBoxItem Content="Реки"/>
+            <ComboBoxItem Content="Моря"/>
+        </ComboBox>
+        <TextBox Name="kurator" ToolTip="Введите куратора" HorizontalAlignment="Left" Height="24" Margin="10,390,0,0" TextWrapping="Wrap" Text="Куратор" VerticalAlignment="Top" Width="175" TextChanged="kurator_TextChanged"/>
+        <Label Content="Дата поступления" HorizontalAlignment="Left" Margin="36,419,0,0" VerticalAlignment="Top"/>
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="17,650,0,0" VerticalAlignment="Top" Width="74" Click="Button_Click"/>
+        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100"/>
+        <Button Name="foto" Content="Добавить фоторафию" HorizontalAlignment="Left" Margin="10,278,0,0" VerticalAlignment="Top" Width="175" Click="foto_Click"/>
+        <DataGrid Name="ZooGrid"  HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" Height="692" Margin="199,27,0,0" VerticalAlignment="Top" Width="Auto" SelectionChanged="DataGrid_SelectionChanged" AutoGenerateColumns="True"/> 
+        <Button Content="Обновить" HorizontalAlignment="Left" Margin="113,650,0,0" VerticalAlignment="Top" Width="81" Click="Button_Click_1" RenderTransformOrigin="0.58,-0.275"/>
+        <Calendar Name="calendar1"  HorizontalAlignment="Left" Margin="10,450,0,0" VerticalAlignment="Top" Width="175" SelectedDatesChanged="calendar_SelectedDatesChanged"/>
+        <TextBox Name="ID" HorizontalAlignment="Left" Height="23" ToolTip="Введите ID" Margin="10,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" TextChanged="ID_TextChanged"/>
+        <Button Content="Удалить выделенную строку" HorizontalAlignment="Left" Margin="17,684,0,0" VerticalAlignment="Top" Width="177" Click="Button_Click_2"/>
+
+    </Grid>
+</Window>
